@@ -3,11 +3,11 @@ Section: misc
 Priority: optional
 Maintainer: Alon Swartz <alon@turnkeylinux.org>
 Build-Depends: debhelper (>> 4.2.0)
-Standards-Version: 3.6.1
+Standards-Version: 3.9.3
 
 Package: confconsole
 Architecture: all
-Depends: python (>= 2.4), python-dialog (>= 2.7-1turnkey+4), turnkey-pylib
+Depends: python (>= 2.4), python-dialog (>= 2.7-1turnkey+4avamagic0), turnkey-pylib, ${misc:Depends}
 Recommends: kbd, di-live, resolvconf
 Section: misc
 Description: TurnKey Linux Configuration Console
