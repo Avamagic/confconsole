@@ -227,15 +227,6 @@ class TurnkeyConsole:
             self.console.msgbox("Error", "Networking is not yet configured")
             return "networking"
 
-        #tklbam integration
-        try:
-            tklbam_status = executil.getoutput("tklbam-status --short")
-        except executil.ExecError, e:
-            if e.exitcode in (10, 11): #not initialized, no backups
-                tklbam_status = e.output
-            else:
-                tklbam_status = ''
-
         #display usage
         ipaddr = ifutil.get_ipconf(ifname)[0]
         hostname = netinfo.get_hostname().upper()
@@ -250,11 +241,6 @@ class TurnkeyConsole:
         except conf.Error:
             t = file(conf.path("services.txt"), 'r').read().rstrip()
             text = Template(t).substitute(ipaddr=ipaddr)
-
-            text += "\n\n%s\n\n" % tklbam_status
-            text += "\n" * (self.height - len(text.splitlines()) - 7)
-            text += "         TurnKey Backups and Cloud Deployment\n"
-            text += "             https://hub.turnkeylinux.org"
 
             retcode = self.console.msgbox("%s appliance services" % hostname,
                                           text, button_label="Advanced Menu")
