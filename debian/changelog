@@ -1,0 +1,63 @@
+confconsole (0.9.4) unstable; urgency=low
+
+  * leverage debian networking tools (ifup/ifdown)
+
+  * removed udhcpc dependency and demoted resolvconf to recommends
+
+  * handle exceptions in a user friendly way (fault tolerant)
+
+  * retain iface options which are already defined when updating interfaces configuration
+
+  * added support for multiple nameservers
+
+  * moved template to /etc/confconsole/usage.txt and set as conffile
+
+  * template changes
+
+  * bugfixes
+
+  * misc
+
+ -- Alon Swartz <alon@sterilesecurity.com>  Wed, 30 Sep 2009 19:06:36 +0200
+
+confconsole (0.9.3) unstable; urgency=low
+
+  * new configuration variable: CONFCONSOLE_FGVT
+
+  * handle use cases as expected (user experience)
+
+  * updated default button labels to make more sense
+
+  * fixed static nameserver configuration to persist across reboots
+
+  * intercept exit signal and verify whether to quit (ESC, ALT+?)
+
+  * validate all input prior to attempting to apply them
+
+  * template changes
+
+ -- Alon Swartz <alon@sterilesecurity.com>  Thu, 29 Jan 2009 13:42:43 +0200
+
+confconsole (0.9.2) unstable; urgency=low
+
+  * multiple nic support
+
+  * many bugfixes and changes, these are just a few
+
+ -- Alon Swartz <alon@sterilesecurity.com>  Mon, 22 Dec 2008 23:35:11 +0200
+
+confconsole (0.9.1) unstable; urgency=low
+
+  * info dialog text is now created from templates/info.txt
+
+  * ports are not verified to be open
+
+  * bugfix: dialog is now configured not to "collapse" whitespaces and tabs
+
+ -- Alon Swartz <alon@sterilesecurity.com>  Sun, 23 Nov 2008 21:12:51 +0200
+
+confconsole (0.9.0) unstable; urgency=low
+
+  * This is a beta release which is nonetheless feature complete.
+
+ -- Alon Swartz <alon@sterilesecurity.com>  Thu, 16 Oct 16 2008 12:07:21 +0200
