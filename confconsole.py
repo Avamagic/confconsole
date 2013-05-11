@@ -109,12 +109,12 @@ class TurnkeyConsole:
     CANCEL = 1
 
     def __init__(self):
-        title = "TurnKey Linux Configuration Console"
+        title = "Avamagic Network Configuration Console"
         self.width = 60
         self.height = 20
 
         self.console = Console(title, self.width, self.height)
-        self.appname = "TurnKey Linux %s" % netinfo.get_hostname().upper()
+        self.appname = "%s" % netinfo.get_hostname().upper()
 
         self.installer = Installer(path='/usr/bin/di-live')
 
