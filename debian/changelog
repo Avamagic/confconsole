@@ -1,3 +1,9 @@
+confconsole (0.9.4-0avamagic2) precise; urgency=low
+
+  * Support customizing vt number to run confconsole
+
+ -- Ron Huang <ronhuang@gmail.com>  Tue, 21 May 2013 13:05:14 +0800
+
 confconsole (0.9.4-0avamagic1) precise; urgency=low
 
   * Switch to dpkg-source 3.0 (quilt) format

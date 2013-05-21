@@ -16,8 +16,18 @@ NAME=confconsole
 DAEMON=/usr/bin/$NAME
 PIDFILE=/var/run/$NAME.pid
 
+# Include confconsole defaults if available
+if [ -f /etc/default/confconsole ]; then
+    . /etc/default/confconsole
+fi
+
 set -e
 . /lib/lsb/init-functions
+
+# Check if VTNUMBER is set in /etc/default/confconsole
+if [ -z "$VTNUMBER" ]; then
+    VTNUMBER=8
+fi
 
 # don't run the console if noconfconsole is passed as a boot param
 for x in $(cat /proc/cmdline); do
@@ -46,7 +56,7 @@ case "$1" in
 
     if $START --quiet --test; then
         chvt 1
-        FGVT=$(fgconsole) openvt -c 8 -s -w -- $START &
+        FGVT=$(fgconsole) openvt -f -c $VTNUMBER -s -w -- $START &
     fi
     log_action_end_msg $?
     ;;
